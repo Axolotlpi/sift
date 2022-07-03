@@ -28,9 +28,6 @@ const pwaConfiguration = {
 			}
 		]
 	},
-	devOptions: {
-		enabled: true
-	},
 	workbox: {
 		// mode: 'development',
 		navigateFallback: '/',
