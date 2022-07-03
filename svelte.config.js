@@ -1,5 +1,7 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
+import { VitePWA } from 'vite-plugin-pwa';
+import { pwaConfiguration } from './pwa-configuration.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,9 +12,11 @@ const config = {
 			postcss: true
 		})
 	],
-
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		vite: {
+			plugins: [VitePWA(pwaConfiguration)]
+		}
 	}
 };
 
